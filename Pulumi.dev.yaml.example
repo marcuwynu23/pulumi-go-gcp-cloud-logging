@@ -1,0 +1,11 @@
+config:
+  gcp:project: your-project-id
+  gcp:region: us-central1
+  logging:bucketName: default-log-bucket
+  logging:retentionDays: "30"
+  logging:sinkName: my-log-sink
+  logging:sinkFilter: "severity >= ERROR"
+  logging:metricName: error-count-metric
+  logging:metricDescription: Count of ERROR severity logs
+  logging:metricFilter: severity=ERROR
+  logging:metricKind: DELTA

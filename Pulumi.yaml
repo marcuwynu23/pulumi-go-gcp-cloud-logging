@@ -1,0 +1,34 @@
+name: pulumi-go-gcp-cloud-logging
+description: A Pulumi Go project for Google Cloud Logging resources
+runtime: go
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: gcp-go
+  gcp:region:
+    description: 'The GCP region for the log bucket (Free Tier: us-central1, us-east1, us-west1)'
+    value: us-central1
+  logging:bucketName:
+    description: The ID of the log bucket
+    value: default-log-bucket
+  logging:retentionDays:
+    description: The retention period for logs in days
+    value: '30'
+  logging:sinkName:
+    description: The name of the log sink
+    value: my-log-sink
+  logging:sinkFilter:
+    description: The filter for the log sink
+    value: severity >= ERROR
+  logging:metricName:
+    description: The name of the log-based metric
+    value: error-count-metric
+  logging:metricDescription:
+    description: The description of the log-based metric
+    value: Count of ERROR severity logs
+  logging:metricFilter:
+    description: The filter for the log-based metric
+    value: severity=ERROR
+  logging:metricKind:
+    description: The metric kind (DELTA, GAUGE, CUMULATIVE)
+    value: DELTA
